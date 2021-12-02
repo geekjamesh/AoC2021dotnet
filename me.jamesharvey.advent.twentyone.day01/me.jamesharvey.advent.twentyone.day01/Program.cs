@@ -20,7 +20,8 @@ namespace me.jamesharvey.advent.twentyone.day01
             try
             {
                 SonarScan scanProcesser = new SonarScan(inputValues);
-                Console.WriteLine($"Number of Times a depth measurement increases = {scanProcesser.CalculateDepthIncreases()}");   
+                Console.WriteLine($"Day 1 a - Number of Times a depth measurement increases = {scanProcesser.CalculateDepthIncreases()}");
+                Console.WriteLine($"Day 1 b - Number of Times a combined depth measurement increases = {scanProcesser.CalculateSlidingDepthIncreases()}");
             }
             catch (Exception ex)
             {

@@ -23,12 +23,41 @@ namespace me.jamesharvey.advent.twentyone.day01.test
         [Fact]
         public void CalculateDepthIncreases_Throws_Exception_Given_NonNumericInput()
         {
-            try {
-                SonarScan testClass = new SonarScan(new List<string>{ "INVALID"});
+            try
+            {
+                SonarScan testClass = new SonarScan(new List<string> { "INVALID" });
                 var result = testClass.CalculateDepthIncreases();
-                Assert.True(false);    
+                Assert.True(false);
             }
-            catch (Exception) {
+            catch (Exception)
+            {
+                Assert.True(true);
+            }
+        }
+
+        [Theory,
+            InlineData(new string[] { "1", "2", "3", "4" }, 1),
+            InlineData(new string[] { "4", "3", "2", "1" }, 0),
+            InlineData(new string[] { "199", "200", "208", "210", "200", "207", "240", "269", "260", "263" }, 5)
+        ]
+        public void CalculateSlidingDepthIncreases_CalculatesCorrectValues_Given_NumericInput(string[] values, int expected)
+        {
+            List<string> testVals = values.ToList();
+            SonarScan testClass = new SonarScan(testVals);
+            Assert.Equal(expected, testClass.CalculateSlidingDepthIncreases());
+        }
+
+        [Fact]
+        public void CalculateAverageDepthIncreases_Throws_Exception_Given_NonNumericInput()
+        {
+            try
+            {
+                SonarScan testClass = new SonarScan(new List<string> { "INVALID" });
+                var result = testClass.CalculateSlidingDepthIncreases();
+                Assert.True(false);
+            }
+            catch (Exception)
+            {
                 Assert.True(true);
             }
         }
