@@ -1,7 +1,7 @@
 ﻿using System;
 namespace me.jamesharvey.advent.twentyone.day02
 {
-    public class Navigator
+    public abstract class BaseNavigator
     {
         /// <summary>
         /// Depth position
@@ -13,7 +13,7 @@ namespace me.jamesharvey.advent.twentyone.day02
         /// </summary>
         public int Horizontal { get; set; }
 
-        public Navigator()
+        public BaseNavigator()
         {
             Depth = 0;
             Horizontal = 0;
@@ -61,27 +61,18 @@ namespace me.jamesharvey.advent.twentyone.day02
         /// Move position Forward
         /// </summary>
         /// <param name="measurement">Distance to move</param>
-        public void MoveForward(int measurement)
-        {
-            Horizontal += measurement;
-        }
+        public abstract void MoveForward(int measurement);
 
         /// <summary>
         /// Move position Down
         /// </summary>
         /// <param name="measurement">Distance to move</param>
-        public void MoveDown(int measurement)
-        {
-            Depth += measurement;
-        }
+        public abstract void MoveDown(int measurement);
 
         /// <summary>
         /// Move position Up
         /// </summary>
         /// <param name="measurement">Distance to move</param>
-        public void MoveUp(int measurement)
-        {
-            Depth -= measurement;
-        }
+        public abstract void MoveUp(int measurement);
     }
 }

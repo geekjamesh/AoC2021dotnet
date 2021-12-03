@@ -20,12 +20,18 @@ namespace me.jamesharvey.advent.twentyone.day02
             }
             try
             {
-                Navigator subNavigation = new Navigator();
+                BasicNavigator subNavigation = new BasicNavigator();
                 foreach(string instruction in inputValues)
                 {
                     subNavigation.ParseInstruction(instruction);
                 }
                 Console.WriteLine($"Day 2 a - Location Reference = {subNavigation.LocationReference}");
+                AimingNavigator secondSubNavigation = new AimingNavigator();
+                foreach (string instruction in inputValues)
+                {
+                    secondSubNavigation.ParseInstruction(instruction);
+                }
+                Console.WriteLine($"Day 2 a - Location Reference = {secondSubNavigation.LocationReference}");
             }
             catch (Exception ex)
             {

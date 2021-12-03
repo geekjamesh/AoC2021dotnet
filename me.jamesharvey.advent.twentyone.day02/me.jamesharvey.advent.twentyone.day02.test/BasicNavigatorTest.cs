@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Xunit;
 
 namespace me.jamesharvey.advent.twentyone.day02.test
 {
-    public class NavigatorTest
+    public class BasicNavigatorTest
     {
         [Fact]
         public void MoveDown_MovesSubDown_ByGivenAmount()
         {
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             classUnderTest.MoveDown(5);
             Assert.Equal(5, classUnderTest.Depth);
             Assert.Equal(0, classUnderTest.Horizontal);
@@ -18,7 +17,7 @@ namespace me.jamesharvey.advent.twentyone.day02.test
         [Fact]
         public void MoveUp_MovesSubUp_ByGivenAmount_GivenDepthIsDeeperThanValue()
         {
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             classUnderTest.MoveDown(10);
             classUnderTest.MoveUp(5);
             Assert.Equal(5, classUnderTest.Depth);
@@ -28,7 +27,7 @@ namespace me.jamesharvey.advent.twentyone.day02.test
         [Fact]
         public void MoveForward_MovesSubForward_ByGivenAmount()
         {
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             classUnderTest.MoveForward(5);
             Assert.Equal(5, classUnderTest.Horizontal);
             Assert.Equal(0, classUnderTest.Depth);
@@ -37,7 +36,7 @@ namespace me.jamesharvey.advent.twentyone.day02.test
         [Fact]
         public void ParseInstruction_MovesSubDown_ByGivenAmount_GivenStringInstruction()
         {
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             classUnderTest.ParseInstruction("down 5");
             Assert.Equal(5, classUnderTest.Depth);
             Assert.Equal(0, classUnderTest.Horizontal);
@@ -46,7 +45,7 @@ namespace me.jamesharvey.advent.twentyone.day02.test
         [Fact]
         public void ParseInstruction_MovesSubUp_ByGivenAmount_GivenStringInstruction()
         {
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             classUnderTest.MoveDown(10);
             classUnderTest.ParseInstruction("up 5");
             Assert.Equal(5, classUnderTest.Depth);
@@ -56,7 +55,7 @@ namespace me.jamesharvey.advent.twentyone.day02.test
         [Fact]
         public void ParseInstruction_MovesSubForward_ByGivenAmount_GivenStringInstruction()
         {
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             classUnderTest.ParseInstruction("forward 5");
             Assert.Equal(5, classUnderTest.Horizontal);
             Assert.Equal(0, classUnderTest.Depth);
@@ -65,7 +64,7 @@ namespace me.jamesharvey.advent.twentyone.day02.test
         [Fact]
         public void LocationReference_ReturnsValue_GivenDepthGreaterThanZeroAndHorizontalGreaterThanZero()
         {
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             classUnderTest.MoveDown(5);
             classUnderTest.MoveForward(5);
             Assert.Equal(25, classUnderTest.LocationReference);
@@ -74,7 +73,7 @@ namespace me.jamesharvey.advent.twentyone.day02.test
         [Fact]
         public void LocationReference_ReturnsZero_GivenDepthofZeroAndHorizontalGreaterThanZero()
         {
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             classUnderTest.MoveForward(5);
             Assert.Equal(0, classUnderTest.LocationReference);
         }
@@ -82,7 +81,7 @@ namespace me.jamesharvey.advent.twentyone.day02.test
         [Fact]
         public void LocationReference_ReturnsZero_GivenDepthGreaterThanZeroAndHorizontalOfZero()
         {
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             classUnderTest.MoveDown(5);
             Assert.Equal(0, classUnderTest.LocationReference);
         }
@@ -90,7 +89,7 @@ namespace me.jamesharvey.advent.twentyone.day02.test
         [Fact]
         public void LocationReference_ReturnsZero_GivenDepthOfZeroAndHorizontalOfZero()
         {
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             Assert.Equal(0, classUnderTest.LocationReference);
         }
 
@@ -106,7 +105,7 @@ namespace me.jamesharvey.advent.twentyone.day02.test
                 "down 8",
                 "forward 2"
             };
-            Navigator classUnderTest = new Navigator();
+            BasicNavigator classUnderTest = new BasicNavigator();
             classUnderTest.ParseInstruction(sampleInstructions[0]);
             Assert.Equal(5, classUnderTest.Horizontal);
             classUnderTest.ParseInstruction(sampleInstructions[1]);
