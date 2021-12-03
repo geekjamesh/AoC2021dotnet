@@ -26,14 +26,16 @@ namespace me.jamesharvey.advent.twentyone.day01
         public int CalculateSlidingDepthIncreases()
         {
             int count = 0;
-            for (int i = 1; i < ScanReadings.Count-2; i++)
+            int current;
+            int? previous = null;
+            for (int i = 0; i < ScanReadings.Count-2; i++)
             {
-                int group1 = int.Parse(ScanReadings[i - 1]) + int.Parse(ScanReadings[i]) + int.Parse(ScanReadings[i + 1]);
-                int group2 = int.Parse(ScanReadings[i]) + int.Parse(ScanReadings[i + 1]) + int.Parse(ScanReadings[i + 2]);
-                if (group2 > group1)
+                current = int.Parse(ScanReadings[i]) + int.Parse(ScanReadings[i + 1]) + int.Parse(ScanReadings[i + 2]);
+                if (previous != null && current > previous)
                 {
                     count++;
                 }
+                previous = current;
             }
 
             return count;
