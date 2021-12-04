@@ -24,14 +24,32 @@ namespace me.jamesharvey.advent.twentyone.day03
             {
                 diagnosticValues.Add(diagnosticLine.ToCharArray());
             }
-            
             for (int i = 0; i < diagnosticValues[0].Length; i++)
+            {
+                string mostCommon = FindMostCommonBit(diagnosticValues, i);
+                if (mostCommon.Equals("1"))
+                {
+                    BinaryGammaRate.Append("1");
+                    BinaryEpsilonRate.Append("0");
+                }
+                else
+                {
+                    BinaryGammaRate.Append("0");
+                    BinaryEpsilonRate.Append("1");
+                }
+            }
+
+        }
+
+        private string FindMostCommonBit(List<char[]> diagnosticValues, int charIndex)
+        {
+            if (diagnosticValues != null && diagnosticValues.Count > 0)
             {
                 int countOfOne = 0;
                 int countOfZero = 0;
                 foreach (char[] line in diagnosticValues)
                 {
-                    switch (line[i])
+                    switch (line[charIndex])
                     {
                         case '1':
                             countOfOne++;
@@ -43,14 +61,16 @@ namespace me.jamesharvey.advent.twentyone.day03
                 }
                 if (countOfOne > countOfZero)
                 {
-                    BinaryGammaRate.Append("1");
-                    BinaryEpsilonRate.Append("0");
+                    return "1";
                 }
                 else
                 {
-                    BinaryGammaRate.Append("0");
-                    BinaryEpsilonRate.Append("1");
+                    return "0";
                 }
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("diagnosticValues");
             }
         }
 
@@ -62,6 +82,14 @@ namespace me.jamesharvey.advent.twentyone.day03
                 int gammaRate = Convert.ToInt32(BinaryGammaRate.ToString(), 2);
                 int epsilonRate = Convert.ToInt32(BinaryEpsilonRate.ToString(), 2);
                 return gammaRate * epsilonRate;
+            }
+        }
+
+        public int OxygenGenRating
+        {
+            get
+            {
+                return 0;
             }
         }
     }

@@ -30,10 +30,9 @@ namespace me.jamesharvey.advent.twentyone.day03.test
         {
             List<string> testData = new List<string> { "101", "010", "110" };
             PowerDignosticReader classUnderTest = new PowerDignosticReader(testData);
-            classUnderTest.CalculateGammaEpsilonRates();
+            Assert.Equal(6, classUnderTest.PowerConsumption);
             Assert.Equal("110", classUnderTest.BinaryGammaRate.ToString());
             Assert.Equal("001", classUnderTest.BinaryEpsilonRate.ToString());
-            Assert.Equal(6, classUnderTest.PowerConsumption);
         }
 
         [Fact]
@@ -41,10 +40,9 @@ namespace me.jamesharvey.advent.twentyone.day03.test
         {
             List<string> testData = new List<string> { "00100", "11110", "10110", "10111", "10101", "01111", "00111", "11100", "10000", "11001", "00010", "01010" };
             PowerDignosticReader classUnderTest = new PowerDignosticReader(testData);
-            classUnderTest.CalculateGammaEpsilonRates();
+            Assert.Equal(198, classUnderTest.PowerConsumption);
             Assert.Equal("10110", classUnderTest.BinaryGammaRate.ToString());
             Assert.Equal("01001", classUnderTest.BinaryEpsilonRate.ToString());
-            Assert.Equal(198, classUnderTest.PowerConsumption);
         }
     }
 }
