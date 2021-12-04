@@ -23,6 +23,8 @@ namespace me.jamesharvey.advent.twentyone.day03
                 PowerDignosticReader powerDiagnostics = new PowerDignosticReader(inputValues);
 
                 Console.WriteLine($"Day 3 a - Power Consumption = {powerDiagnostics.PowerConsumption}");
+
+                Console.WriteLine($"Day 3 b - Life Support rating = {powerDiagnostics.LifeSupportRating}");
             }
             catch (Exception ex)
             {
