@@ -58,6 +58,7 @@ namespace me.jamesharvey.advent.twentyone.day03
         {
             get
             {
+                CalculateGammaEpsilonRates();
                 int gammaRate = Convert.ToInt32(BinaryGammaRate.ToString(), 2);
                 int epsilonRate = Convert.ToInt32(BinaryEpsilonRate.ToString(), 2);
                 return gammaRate * epsilonRate;

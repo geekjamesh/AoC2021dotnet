@@ -22,8 +22,6 @@ namespace me.jamesharvey.advent.twentyone.day03
             {
                 PowerDignosticReader powerDiagnostics = new PowerDignosticReader(inputValues);
 
-                powerDiagnostics.CalculateGammaEpsilonRates();
-
                 Console.WriteLine($"Day 3 a - Power Consumption = {powerDiagnostics.PowerConsumption}");
             }
             catch (Exception ex)
