@@ -20,7 +20,7 @@ namespace me.jamesharvey.advent.twentyone.day03
             }
             try
             {
-                PowerDignosticReader powerDiagnostics = new PowerDignosticReader(inputValues);
+                DignosticReportReader powerDiagnostics = new DignosticReportReader(inputValues);
 
                 Console.WriteLine($"Day 3 a - Power Consumption = {powerDiagnostics.PowerConsumption}");
 

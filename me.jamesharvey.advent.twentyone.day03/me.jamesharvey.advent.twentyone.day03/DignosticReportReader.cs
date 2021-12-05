@@ -4,7 +4,7 @@ using System.Text;
 
 namespace me.jamesharvey.advent.twentyone.day03
 {
-    public class PowerDignosticReader
+    public class DignosticReportReader
     {
         private List<string> _diagnosticInput;
 
@@ -12,7 +12,7 @@ namespace me.jamesharvey.advent.twentyone.day03
 
         public StringBuilder BinaryEpsilonRate { get; set; } = new StringBuilder();
 
-        public PowerDignosticReader(List<string> input)
+        public DignosticReportReader(List<string> input)
         {
             _diagnosticInput = input;
         }
