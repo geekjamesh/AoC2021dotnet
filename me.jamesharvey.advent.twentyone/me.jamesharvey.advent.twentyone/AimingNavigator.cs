@@ -1,8 +1,14 @@
 ﻿using System;
-namespace me.jamesharvey.advent.twentyone.day02
+namespace me.jamesharvey.advent.twentyone
 {
-    public class BasicNavigator : BaseNavigator
+    public class AimingNavigator : BaseNavigator
     {
+        public int Aim { get; set; }
+
+        public AimingNavigator() : base()
+        {
+            Aim = 0;
+        }
 
         /// <summary>
         /// Move position Forward
@@ -11,6 +17,7 @@ namespace me.jamesharvey.advent.twentyone.day02
         public override void MoveForward(int measurement)
         {
             Horizontal += measurement;
+            Depth += (Aim * measurement);
         }
 
         /// <summary>
@@ -19,7 +26,7 @@ namespace me.jamesharvey.advent.twentyone.day02
         /// <param name="measurement">Distance to move</param>
         public override void MoveDown(int measurement)
         {
-            Depth += measurement;
+            Aim += measurement;
         }
 
         /// <summary>
@@ -28,7 +35,7 @@ namespace me.jamesharvey.advent.twentyone.day02
         /// <param name="measurement">Distance to move</param>
         public override void MoveUp(int measurement)
         {
-            Depth -= measurement;
+            Aim -= measurement;
         }
     }
 }

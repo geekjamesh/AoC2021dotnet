@@ -1,5 +1,5 @@
 ﻿using System;
-namespace me.jamesharvey.advent.twentyone.day02
+namespace me.jamesharvey.advent.twentyone
 {
     public abstract class BaseNavigator
     {

@@ -1,21 +1,23 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 
-namespace me.jamesharvey.advent.twentyone.day01
+namespace me.jamesharvey.advent.twentyone
 {
     public class SonarScan
     {
-        private List<string> ScanReadings;
+        private List<int> ScanReadings;
 
-        public SonarScan(List<string> scanReadings) {
+        public SonarScan(List<int> scanReadings)
+        {
             ScanReadings = scanReadings;
         }
 
-        public int CalculateDepthIncreases() {
+        public int CalculateDepthIncreases()
+        {
             int count = 0;
-            for(int i=1; i < ScanReadings.Count; i++) {
-                if (int.Parse(ScanReadings[i]) > int.Parse(ScanReadings[i-1])) {
+            for (int i = 1; i < ScanReadings.Count; i++)
+            {
+                if (ScanReadings[i] > ScanReadings[i - 1])
+                {
                     count++;
                 }
             }
@@ -28,9 +30,9 @@ namespace me.jamesharvey.advent.twentyone.day01
             int count = 0;
             int current;
             int? previous = null;
-            for (int i = 0; i < ScanReadings.Count-2; i++)
+            for (int i = 0; i < ScanReadings.Count - 2; i++)
             {
-                current = int.Parse(ScanReadings[i]) + int.Parse(ScanReadings[i + 1]) + int.Parse(ScanReadings[i + 2]);
+                current = ScanReadings[i] + ScanReadings[i + 1] + ScanReadings[i + 2];
                 if (previous != null && current > previous)
                 {
                     count++;
