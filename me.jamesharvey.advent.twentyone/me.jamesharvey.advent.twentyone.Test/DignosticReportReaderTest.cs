@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Xunit;
 
-namespace me.jamesharvey.advent.twentyone.day03.test
+namespace me.jamesharvey.advent.twentyone.test
 {
     public class DignosticReportReaderTest
     {

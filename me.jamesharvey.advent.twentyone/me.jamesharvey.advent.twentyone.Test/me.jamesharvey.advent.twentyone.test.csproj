@@ -24,6 +24,14 @@
       <Link>InputData\SonarScanInput.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\me.jamesharvey.advent.twentyone\InputData\NavigationInstructions.txt">
+      <Link>InputData\NavigationInstructions.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\me.jamesharvey.advent.twentyone\InputData\DiagnosticData.txt">
+      <Link>InputData\DiagnosticData.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InputData\" />

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace me.jamesharvey.advent.twentyone.day03
+namespace me.jamesharvey.advent.twentyone
 {
     public class DignosticReportReader
     {
