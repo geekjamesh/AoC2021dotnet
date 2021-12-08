@@ -57,5 +57,13 @@ namespace me.jamesharvey.advent.twentyone.test
             DignosticReportReader powerDiagnostics = new DignosticReportReader(FileReader.ReadStringInputFromFile("InputData/DiagnosticData.txt"));
             Assert.Equal(3570354, powerDiagnostics.LifeSupportRating);
         }
+
+        [Fact]
+        public void Day4_Part1()
+        {
+            BingoService classUnderTest = new BingoService();
+            classUnderTest.CreateCards(FileReader.ReadStringInputFromFile("InputData/BingoData.txt"));
+            Assert.Equal(87456, classUnderTest.RunBingoGame());
+        }
     }
 }
