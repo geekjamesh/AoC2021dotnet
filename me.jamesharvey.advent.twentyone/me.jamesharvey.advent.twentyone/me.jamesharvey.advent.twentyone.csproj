@@ -8,10 +8,12 @@
   <ItemGroup>
     <None Remove="Utilities\" />
     <None Remove="InputData\" />
+    <None Remove="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utilities\" />
     <Folder Include="InputData\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="InputData\SonarScanInput.txt">
@@ -21,6 +23,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="InputData\DiagnosticData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="InputData\BingoData.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

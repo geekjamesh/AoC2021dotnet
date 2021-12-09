@@ -35,6 +35,14 @@ namespace me.jamesharvey.advent.twentyone
                 DignosticReportReader powerDiagnostics = new DignosticReportReader(diagnosticData);
                 Console.WriteLine($"Day 3 a - Power Consumption = {powerDiagnostics.PowerConsumption}");
                 Console.WriteLine($"Day 3 b - Life Support rating = {powerDiagnostics.LifeSupportRating}");
+
+                // Day 4
+                BingoService winningBingoGame = new BingoService();
+                winningBingoGame.CreateCards(FileReader.ReadStringInputFromFile("InputData/BingoData.txt"));
+                BingoService losingBingoGame = new BingoService();
+                losingBingoGame.CreateCards(FileReader.ReadStringInputFromFile("InputData/BingoData.txt"));
+                Console.WriteLine($"Day 4 a - Winning Bingo Card's Score = {winningBingoGame.RunBingoGame(BingoService.GameStyle.PlayToWin)}");
+                Console.WriteLine($"Day 4 b - Losing Bingo Card's Score = {losingBingoGame.RunBingoGame(BingoService.GameStyle.PlayToLose)}");
             }
             catch (Exception ex)
             {

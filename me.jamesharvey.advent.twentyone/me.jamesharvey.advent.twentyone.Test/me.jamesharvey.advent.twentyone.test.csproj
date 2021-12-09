@@ -18,6 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="InputData\" />
+    <None Remove="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\me.jamesharvey.advent.twentyone\InputData\SonarScanInput.txt">
@@ -32,8 +33,13 @@
       <Link>InputData\DiagnosticData.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\me.jamesharvey.advent.twentyone\InputData\BingoData.txt">
+      <Link>InputData\BingoData.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InputData\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>
