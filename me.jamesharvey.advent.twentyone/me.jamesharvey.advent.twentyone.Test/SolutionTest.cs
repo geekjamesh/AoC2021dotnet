@@ -73,5 +73,12 @@ namespace me.jamesharvey.advent.twentyone.test
             classUnderTest.CreateCards(FileReader.ReadStringInputFromFile("InputData/BingoData.txt"));
             Assert.Equal(15561, classUnderTest.RunBingoGame(BingoService.GameStyle.PlayToLose));
         }
+
+        [Fact]
+        public void Day9_Part1()
+        {
+            SmokeRiskService smokeRiskService = new SmokeRiskService(FileReader.ReadStringInputFromFile("InputData/HeightMap.txt"));
+            Assert.Equal(530, smokeRiskService.CalculateSmokeRisk());
+        }
     }
 }

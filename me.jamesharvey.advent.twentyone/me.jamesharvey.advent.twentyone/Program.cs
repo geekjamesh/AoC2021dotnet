@@ -43,6 +43,22 @@ namespace me.jamesharvey.advent.twentyone
                 losingBingoGame.CreateCards(FileReader.ReadStringInputFromFile("InputData/BingoData.txt"));
                 Console.WriteLine($"Day 4 a - Winning Bingo Card's Score = {winningBingoGame.RunBingoGame(BingoService.GameStyle.PlayToWin)}");
                 Console.WriteLine($"Day 4 b - Losing Bingo Card's Score = {losingBingoGame.RunBingoGame(BingoService.GameStyle.PlayToLose)}");
+
+                // Day 5
+                // TODO: Complete Day 5
+
+                // Day 6
+                // TODO: Complete Day 6
+
+                // Day 7
+                // TODO: Complete Day 7
+
+                // Day 8
+                // TODO: Complete Day 8
+
+                // Day 9
+                SmokeRiskService smokeRiskService = new SmokeRiskService(FileReader.ReadStringInputFromFile("InputData/HeightMap.txt"));
+                Console.WriteLine($"Day 9 a - Smoke Risk = {smokeRiskService.CalculateSmokeRisk()}");
             }
             catch (Exception ex)
             {
