@@ -10,6 +10,12 @@ namespace me.jamesharvey.advent.twentyone
 
         public List<int> CalledNumbers { get; set; }
 
+        public enum GameStyle
+        {
+            PlayToWin,
+            PlayToLose
+        }
+
         public BingoService()
         {
             BingoCards = new List<BingoCard>();
@@ -46,20 +52,45 @@ namespace me.jamesharvey.advent.twentyone
             }
         }
 
-        public int RunBingoGame()
+        public int RunBingoGame(GameStyle playGameStyle)
         {
+            int cardsInPlay = BingoCards.Count;
             foreach (int numberCalled in CalledNumbers)
             {
-                for (int i = 0; i < BingoCards.Count; i++)
+                if (playGameStyle == GameStyle.PlayToWin)
                 {
-                    BingoCards[i].MarkCard(numberCalled);
-                    if (BingoCards[i].WinningCard)
+                    for (int i = 0; i < BingoCards.Count; i++)
                     {
-                        return BingoCards[i].CalculateCardScore(numberCalled);
+                        BingoCards[i].MarkCard(numberCalled);
+                        if (BingoCards[i].WinningCard)
+                        {
+                            return BingoCards[i].CalculateCardScore(numberCalled);
+                        }
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < BingoCards.Count; i++)
+                    {
+                        if (!BingoCards[i].WinningCard)
+                        {
+                            BingoCards[i].MarkCard(numberCalled);
+                            if (BingoCards[i].WinningCard)
+                            {
+                                if (cardsInPlay == 1)
+                                {
+                                    return BingoCards[i].CalculateCardScore(numberCalled);
+                                }
+                                else
+                                {
+                                    cardsInPlay--;
+                                }
+                            }
+                        }
                     }
                 }
             }
-
+            
             return 0;
         }
     }

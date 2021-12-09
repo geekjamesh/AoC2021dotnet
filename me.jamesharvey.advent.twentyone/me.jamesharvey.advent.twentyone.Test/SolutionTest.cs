@@ -63,7 +63,15 @@ namespace me.jamesharvey.advent.twentyone.test
         {
             BingoService classUnderTest = new BingoService();
             classUnderTest.CreateCards(FileReader.ReadStringInputFromFile("InputData/BingoData.txt"));
-            Assert.Equal(87456, classUnderTest.RunBingoGame());
+            Assert.Equal(87456, classUnderTest.RunBingoGame(BingoService.GameStyle.PlayToWin));
+        }
+
+        [Fact]
+        public void Day4_Part2()
+        {
+            BingoService classUnderTest = new BingoService();
+            classUnderTest.CreateCards(FileReader.ReadStringInputFromFile("InputData/BingoData.txt"));
+            Assert.Equal(15561, classUnderTest.RunBingoGame(BingoService.GameStyle.PlayToLose));
         }
     }
 }
