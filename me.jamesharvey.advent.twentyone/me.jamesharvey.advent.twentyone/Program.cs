@@ -43,6 +43,28 @@ namespace me.jamesharvey.advent.twentyone
                 losingBingoGame.CreateCards(FileReader.ReadStringInputFromFile("InputData/BingoData.txt"));
                 Console.WriteLine($"Day 4 a - Winning Bingo Card's Score = {winningBingoGame.RunBingoGame(BingoService.GameStyle.PlayToWin)}");
                 Console.WriteLine($"Day 4 b - Losing Bingo Card's Score = {losingBingoGame.RunBingoGame(BingoService.GameStyle.PlayToLose)}");
+
+                // Day 5
+
+                // Day 6
+
+                // Day 7
+
+                // Day 8
+
+                // Day 9
+
+                // Day 10
+
+                // Day 11
+
+                // Day 12
+
+                // Day 13
+
+                // Day 14
+                PolymerisationService polymerService = new PolymerisationService(FileReader.ReadStringInputFromFile("InputData/PolymerData.txt"));
+                Console.WriteLine($"Day 14 a - Element Calculation = {polymerService.ProcessPolymerisation()}");
             }
             catch (Exception ex)
             {

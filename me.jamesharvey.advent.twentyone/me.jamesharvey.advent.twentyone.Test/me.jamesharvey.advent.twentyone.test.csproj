@@ -37,6 +37,10 @@
       <Link>InputData\BingoData.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\me.jamesharvey.advent.twentyone\InputData\PolymerData.txt">
+      <Link>InputData\PolymerData.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InputData\" />

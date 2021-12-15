@@ -73,5 +73,12 @@ namespace me.jamesharvey.advent.twentyone.test
             classUnderTest.CreateCards(FileReader.ReadStringInputFromFile("InputData/BingoData.txt"));
             Assert.Equal(15561, classUnderTest.RunBingoGame(BingoService.GameStyle.PlayToLose));
         }
+
+        [Fact]
+        public void Day14_Part1()
+        {
+            PolymerisationService classUnderTest = new PolymerisationService(FileReader.ReadStringInputFromFile("InputData/PolymerData.txt"));
+            Assert.Equal(3048, classUnderTest.ProcessPolymerisation());
+        }
     }
 }
